@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="px-6 sm:container lg:w-[2000px] mx-auto pt-24 flex flex-col-reverse lg:flex-row lg:gap-24 lg:pt-32 lg:px-14">
+    <div className="pb-[168px] px-6 sm:container lg:w-[2000px] mx-auto pt-24 flex flex-col-reverse lg:flex-row lg:gap-24 lg:pt-32 lg:px-14">
       <div className="pt-10 flex flex-col items-center lg:items-start lg:min-w-[500px] xl:min-w-[700px]">
         <h1 className="font-[800] text-[42px] leading-[48px] text-very-dark-blue text-center w-full lg:text-6xl xl:text-8xl lg:text-left">
           More than just shorter links
@@ -20,7 +20,7 @@ export default function Hero() {
           </p>
         </Link>
       </div>
-      <div className="">
+      <div>
         <Image
           className="min-w-[495px] lg:min-w-[733px]"
           src={workingIlustration}
