@@ -11,14 +11,20 @@ interface LinkItem {
   shortenedLink: string;
 }
 
+interface Error {
+  error: boolean;
+  message?: string;
+}
+
 export default function LinkShortener() {
   const [cookie, setCookie] = useCookies(["linkItems"]);
   const [viewportWidth, setViewportWidth] = useState(0);
   const [linkInput, setLinkInput] = useState("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<Error>({ error: false });
   const [links, setLinks] = useState<LinkItem[]>([]);
   const [copiedLink, setCopiedLink] = useState<number | null>(null);
 
+  // Copy link to clipboard
   function handleCopy(linkId: number) {
     navigator.clipboard
       .writeText(links[linkId].shortenedLink)
@@ -28,9 +34,8 @@ export default function LinkShortener() {
     setCopiedLink(linkId);
   }
 
+  // fetch the srtcode api with the linkInput state
   async function fetchData() {
-    const body = "example.org/very/long/link.html";
-
     const response = await fetch("/api/shrtcode", {
       method: "POST",
       body: JSON.stringify(linkInput),
@@ -44,13 +49,14 @@ export default function LinkShortener() {
     return data;
   }
 
+  // Get the links present in the cookies
   useEffect(() => {
     const linkJson = JSON.stringify(links);
 
     setCookie("linkItems", linkJson, { path: "/" });
   }, [links, setCookie]);
 
-  // Set the width of the viewport and set the links to whatever is in the cookies
+  // Set the width of the viewport, to change the background image based on the width of the viewport
   useEffect(() => {
     if (cookie.linkItems) {
       setLinks(cookie.linkItems);
@@ -66,20 +72,24 @@ export default function LinkShortener() {
 
   // Add new link to link array
   const handleClick = async () => {
-    if (!linkInput) {
-      setError(true);
+    if (!linkInput || linkInput.trim() === "") {
+      setError({ error: true, message: "Please add a link" });
+      setLinkInput("");
       return;
     }
 
-    setError(false);
+    setError({ error: true });
 
     const response = await fetchData();
 
     if (!response.ok) {
-      setError(true);
+      // get just the first half of the error
+      const error = response.error.split(",")[0];
+      setError({ error: true, message: `${error}.` });
       return;
     }
 
+    // Add new link item based on the result of the api call
     const newLink: LinkItem = {
       inputLink: response.result.original_link,
       shortenedLink: response.result.full_short_link,
@@ -87,7 +97,6 @@ export default function LinkShortener() {
 
     setLinks([newLink, ...links]);
     setLinkInput("");
-
     setCopiedLink(null);
 
     console.log(response);
@@ -97,7 +106,7 @@ export default function LinkShortener() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     setLinkInput(value);
-    setError(false);
+    setError({ error: false });
   };
 
   return (
@@ -115,16 +124,16 @@ export default function LinkShortener() {
               onChange={(e) => handleChange(e)}
               type="text"
               className={`h-12 rounded-md pl-4 w-full xl:h-16 focus:outline-none focus:ring-cyan focus:ring-2 ${
-                error ? "ring-secondary-red ring-2" : ""
+                error.error ? "ring-secondary-red ring-2" : ""
               }`}
               placeholder="Shorten a link here..."
             />
             <p
               className={`text-xs text-secondary-red font-medium italic mt-1 lg:absolute ${
-                error ? "" : "hidden"
+                error.error ? "" : "hidden"
               }`}
             >
-              Please add a link
+              {error.message}
             </p>
           </div>
           <button
