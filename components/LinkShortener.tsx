@@ -110,50 +110,52 @@ export default function LinkShortener() {
   };
 
   return (
-    <div className="px-6 bg-[#EFF1F7] sm:container mx-auto lg:px-14">
-      <div className="w-full bg-dark-violet rounded-lg -translate-y-[72px] overflow-hidden p-6 md:p-8 relative xl:px-16 xl:py-[52px]">
-        <Image
-          className="absolute top-0 right-0 w-[200px] z-0 md:w-full md:h-full"
-          src={viewportWidth >= 768 ? desktopBackground : mobileBackground}
-          alt="Background graphic"
-        />
-        <div className="relative flex flex-col gap-4 lg:flex-row xl:gap-6">
-          <div className="flex-grow">
-            <input
-              value={linkInput}
-              onChange={(e) => handleChange(e)}
-              type="text"
-              className={`h-12 rounded-md pl-4 w-full xl:h-16 focus:outline-none focus:ring-cyan focus:ring-2 ${
-                error.error ? "ring-secondary-red ring-2" : ""
-              }`}
-              placeholder="Shorten a link here..."
-            />
-            <p
-              className={`text-xs text-secondary-red font-medium italic mt-1 lg:absolute ${
-                error.error ? "" : "hidden"
-              }`}
-            >
-              {error.message}
-            </p>
-          </div>
-          <button
-            onClick={handleClick}
-            className="bg-cyan rounded-md h-12 font-bold text-[18px] text-white text-center flex items-center justify-center lg:px-10 whitespace-nowrap xl:h-16"
-          >
-            Shorten it!
-          </button>
-        </div>
-      </div>
-      {links &&
-        links.map((link, index) => (
-          <ShortenedLink
-            key={index}
-            inputLink={link.inputLink}
-            shortenedLink={link.shortenedLink}
-            copied={copiedLink === index}
-            onCopy={() => handleCopy(index)}
+    <div className="bg-[#EFF1F7]">
+      <div className="px-6 sm:container mx-auto lg:px-14">
+        <div className="w-full bg-dark-violet rounded-lg -translate-y-[72px] overflow-hidden p-6 md:p-8 relative xl:px-16 xl:py-[52px]">
+          <Image
+            className="absolute top-0 right-0 w-[200px] z-0 md:w-full md:h-full"
+            src={viewportWidth >= 768 ? desktopBackground : mobileBackground}
+            alt="Background graphic"
           />
-        ))}
+          <div className="relative flex flex-col gap-4 lg:flex-row xl:gap-6">
+            <div className="flex-grow">
+              <input
+                value={linkInput}
+                onChange={(e) => handleChange(e)}
+                type="text"
+                className={`h-12 rounded-md pl-4 w-full xl:h-16 focus:outline-none focus:ring-cyan focus:ring-2 ${
+                  error.error ? "ring-secondary-red ring-2" : ""
+                }`}
+                placeholder="Shorten a link here..."
+              />
+              <p
+                className={`text-xs text-secondary-red font-medium italic mt-1 lg:absolute ${
+                  error.error ? "" : "hidden"
+                }`}
+              >
+                {error.message}
+              </p>
+            </div>
+            <button
+              onClick={handleClick}
+              className="bg-cyan rounded-md h-12 font-bold text-[18px] text-white text-center flex items-center justify-center lg:px-10 whitespace-nowrap xl:h-16"
+            >
+              Shorten it!
+            </button>
+          </div>
+        </div>
+        {links &&
+          links.map((link, index) => (
+            <ShortenedLink
+              key={index}
+              inputLink={link.inputLink}
+              shortenedLink={link.shortenedLink}
+              copied={copiedLink === index}
+              onCopy={() => handleCopy(index)}
+            />
+          ))}
+      </div>
     </div>
   );
 }
