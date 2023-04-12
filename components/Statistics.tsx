@@ -24,8 +24,8 @@ export default function Statistics() {
   ];
 
   return (
-    <div className="bg-[#EFF1F7] pt-2 xl:pt-12">
-      <div className="px-6 sm:container mx-auto lg:px-14 flex flex-col items-center pb-96">
+    <div className="bg-[#EFF1F7] pt-2 xl:pt-12 xl:pb-[120px]">
+      <div className="px-6 sm:container mx-auto lg:px-14 flex flex-col items-center">
         <h2 className="font-bold text-[28px] text-center text-very-dark-blue xl:text-[40px]">
           Advanced Statistics
         </h2>
