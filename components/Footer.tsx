@@ -19,49 +19,49 @@ export default function Footer() {
   const features: menuItem[] = [
     {
       title: "Link Shortening",
-      url: "#",
+      url: "/",
     },
     {
       title: "Branded Links",
-      url: "#",
+      url: "/",
     },
     {
       title: "Analytics",
-      url: "#",
+      url: "/",
     },
   ];
 
   const resources: menuItem[] = [
     {
       title: "Blog",
-      url: "#",
+      url: "/",
     },
     {
       title: "Developers",
-      url: "#",
+      url: "/",
     },
     {
       title: "Support",
-      url: "#",
+      url: "/",
     },
   ];
 
   const company: menuItem[] = [
     {
       title: "About",
-      url: "#",
+      url: "/",
     },
     {
       title: "Our Team",
-      url: "#",
+      url: "/",
     },
     {
       title: "Careers",
-      url: "#",
+      url: "/",
     },
     {
       title: "Contact",
-      url: "#",
+      url: "/",
     },
   ];
 
@@ -80,16 +80,16 @@ export default function Footer() {
             <FooterMenu items={company} title="Company" />
           </div>
           <div className="flex gap-6 mt-12 lg:mt-0">
-            <Link href="#">
+            <Link href="/">
               <FaFacebookSquare className="cursor-pointer w-6 h-6 text-white hover:text-cyan" />
             </Link>
-            <Link href="#">
+            <Link href="/">
               <FaTwitter className="cursor-pointer w-6 h-6 text-white hover:text-cyan" />
             </Link>
-            <Link href="#">
+            <Link href="/">
               <FaPinterest className="cursor-pointer w-6 h-6 text-white hover:text-cyan" />
             </Link>
-            <Link href="#">
+            <Link href="/">
               <FaInstagram className="cursor-pointer w-6 h-6 text-white hover:text-cyan" />
             </Link>
           </div>

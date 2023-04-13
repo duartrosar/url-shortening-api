@@ -30,29 +30,27 @@ export default function NavBar() {
             <Image src={Logo} alt="logo" className="w-[120px] object-contain" />
           </Link>
           <ul className="hidden lg:flex gap-8 items-center ">
-            <Link href="/styles">
-              <li className="desktop-menu-item">Features</li>
-            </Link>
-            <Link href="/styles">
-              <li className="desktop-menu-item">Pricing</li>
-            </Link>
-            <Link href="/styles">
-              <li className="desktop-menu-item">Resources</li>
-            </Link>
+            <li className="desktop-menu-item">
+              <Link href="/">Features</Link>
+            </li>
+            <li className="desktop-menu-item">
+              <Link href="/">Pricing</Link>
+            </li>
+            <li className="desktop-menu-item">
+              <Link href="/">Resources</Link>
+            </li>
           </ul>
         </div>
         {/* Desktop Menu */}
         <div>
           <div className="hidden lg:flex ">
             <ul className="hidden lg:flex gap-8 items-center ">
-              <Link href="/styles">
-                <li className="desktop-menu-item">Login</li>
-              </Link>
-              <Link href="/">
-                <li className="bg-cyan rounded-full py-2 px-6 text-[15px] btn hover:bg-[#9AE3E3]">
-                  Sign Up
-                </li>
-              </Link>
+              <li className="desktop-menu-item">
+                <Link href="/">Login</Link>
+              </li>
+              <li className="bg-cyan rounded-full py-2 px-6 text-[15px] btn hover:bg-[/9AE3E3]">
+                <Link href="/">Sign Up</Link>
+              </li>
             </ul>
           </div>
           <div className="lg:hidden text-gray-violet" onClick={handleNav}>
@@ -70,7 +68,7 @@ export default function NavBar() {
         <div className="w-full absolute top-24 left-0 px-6 lg:hidden">
           <div className="bg-dark-violet rounded-lg w-full px-6 py-10">
             <ul>
-              <Link href="/styles">
+              <Link href="/">
                 <li className="mobile-menu-item mb-[30px]">Features</li>
               </Link>
               <Link href="/">
@@ -86,7 +84,7 @@ export default function NavBar() {
                 <li className="mobile-menu-item mb-6">Login</li>
               </Link>
               <Link href="/">
-                <li className="bg-cyan rounded-full pt-3 pb-2 text-lg btn hover:bg-[#9AE3E3]">
+                <li className="bg-cyan rounded-full pt-3 pb-2 text-lg btn hover:bg-[/9AE3E3]">
                   Sign Up
                 </li>
               </Link>

@@ -2,17 +2,6 @@
 
 This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  <!-- - [Screenshot](#screenshot) -->
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  <!-- - [What I learned](#what-i-learned) -->
-  <!-- - [Continued development](#continued-development) -->
-- [Author](#author)
 
 ## Overview
 
@@ -41,7 +30,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/fully-responsive-page-with-nextjs-and-tailwind-SuvgCfoq7a)
 - Live Site URL: [Url Shortening Api](https://beamish-gingersnap-b532c9.netlify.app/)
 
 ## My process

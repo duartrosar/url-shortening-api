@@ -20,11 +20,11 @@ export default function FooterMenu(props: FooterMenuProps) {
       </h2>
       <ul className="mt-[22px] flex flex-col gap-[10px]">
         {props.items.map((data, index) => (
-          <Link href={data.url} key={index}>
-            <li className="text-center text-[#BFBFBF] text-[15px] font-medium lg:text-left hover:text-cyan">
+          <li className="text-center text-[#BFBFBF] text-[15px] font-medium lg:text-left hover:text-cyan">
+            <Link href={data.url} key={index}>
               {data.title}
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
       </ul>
     </div>
