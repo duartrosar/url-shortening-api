@@ -78,8 +78,6 @@ export default function LinkShortener() {
       return;
     }
 
-    setError({ error: true });
-
     const response = await fetchData();
 
     if (!response.ok) {
@@ -98,9 +96,6 @@ export default function LinkShortener() {
     setLinks([newLink, ...links]);
     setLinkInput("");
     setCopiedLink(null);
-    setError({ error: false });
-
-    console.log(error);
   };
 
   // Handle link input changes
