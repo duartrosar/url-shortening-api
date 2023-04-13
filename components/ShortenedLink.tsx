@@ -34,8 +34,10 @@ export default function ShortenedLink({
         <button
           onClick={onCopy}
           className={`w-full mt-3 ${
-            copied ? "bg-dark-violet" : "bg-cyan"
-          } rounded-md h-10 font-bold text-[16px] text-white text-center flex items-center justify-center lg:px-10 whitespace-nowrap xl:m-0 xl:px-0 xl:py-[10px] xl:text-[15px] xl:min-w-[103px]`}
+            copied
+              ? "bg-dark-violet hover:opacity-75"
+              : "bg-cyan hover:bg-[#9AE3E3]"
+          } btn rounded-md h-10 text-[16px] flex items-center justify-center lg:px-10 whitespace-nowrap xl:m-0 xl:px-0 xl:py-[10px] xl:text-[15px] xl:min-w-[103px]`}
         >
           {copied ? "Copied!" : "Copy"}
         </button>

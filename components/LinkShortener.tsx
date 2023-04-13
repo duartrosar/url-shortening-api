@@ -98,8 +98,9 @@ export default function LinkShortener() {
     setLinks([newLink, ...links]);
     setLinkInput("");
     setCopiedLink(null);
+    setError({ error: false });
 
-    console.log(response);
+    console.log(error);
   };
 
   // Handle link input changes
@@ -139,7 +140,7 @@ export default function LinkShortener() {
             </div>
             <button
               onClick={handleClick}
-              className="bg-cyan rounded-md h-12 font-bold text-[18px] text-white text-center flex items-center justify-center lg:px-10 whitespace-nowrap xl:h-16"
+              className="bg-cyan rounded-md h-12 text-[18px]  flex items-center justify-center lg:px-10 whitespace-nowrap xl:h-16 btn hover:bg-[#9AE3E3]"
             >
               Shorten it!
             </button>

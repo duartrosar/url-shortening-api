@@ -28,7 +28,7 @@ export default function Boost() {
           Boost your links today
         </h1>
         <Link className="" href="/">
-          <p className="bg-cyan rounded-full px-10 py-3 font-bold text-[20px] text-white text-center">
+          <p className="bg-cyan rounded-full px-10 py-3 font-bold text-[20px] text-white text-center btn hover:bg-[#9AE3E3]">
             Get Started
           </p>
         </Link>

@@ -19,49 +19,49 @@ export default function Footer() {
   const features: menuItem[] = [
     {
       title: "Link Shortening",
-      url: "/link-shortening",
+      url: "#",
     },
     {
       title: "Branded Links",
-      url: "/branded-links",
+      url: "#",
     },
     {
       title: "Analytics",
-      url: "/analytics",
+      url: "#",
     },
   ];
 
   const resources: menuItem[] = [
     {
       title: "Blog",
-      url: "/blog",
+      url: "#",
     },
     {
       title: "Developers",
-      url: "/developers",
+      url: "#",
     },
     {
       title: "Support",
-      url: "/support",
+      url: "#",
     },
   ];
 
   const company: menuItem[] = [
     {
       title: "About",
-      url: "/about",
+      url: "#",
     },
     {
       title: "Our Team",
-      url: "/our-team",
+      url: "#",
     },
     {
       title: "Careers",
-      url: "/careers",
+      url: "#",
     },
     {
       title: "Contact",
-      url: "/contact",
+      url: "#",
     },
   ];
 
@@ -80,10 +80,18 @@ export default function Footer() {
             <FooterMenu items={company} title="Company" />
           </div>
           <div className="flex gap-6 mt-12 lg:mt-0">
-            <FaFacebookSquare className="cursor-pointer w-6 h-6 text-white hover:text-cyan" />
-            <FaTwitter className="cursor-pointer w-6 h-6 text-white hover:text-cyan" />
-            <FaPinterest className="cursor-pointer w-6 h-6 text-white hover:text-cyan" />
-            <FaInstagram className="cursor-pointer w-6 h-6 text-white hover:text-cyan" />
+            <Link href="#">
+              <FaFacebookSquare className="cursor-pointer w-6 h-6 text-white hover:text-cyan" />
+            </Link>
+            <Link href="#">
+              <FaTwitter className="cursor-pointer w-6 h-6 text-white hover:text-cyan" />
+            </Link>
+            <Link href="#">
+              <FaPinterest className="cursor-pointer w-6 h-6 text-white hover:text-cyan" />
+            </Link>
+            <Link href="#">
+              <FaInstagram className="cursor-pointer w-6 h-6 text-white hover:text-cyan" />
+            </Link>
           </div>
         </div>
       </div>

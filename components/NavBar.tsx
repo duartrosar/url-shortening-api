@@ -31,19 +31,13 @@ export default function NavBar() {
           </Link>
           <ul className="hidden lg:flex gap-8 items-center ">
             <Link href="/styles">
-              <li className="font-bold text-[15px] text-gray-violet hover:text-very-dark-blue text-center">
-                Features
-              </li>
+              <li className="desktop-menu-item">Features</li>
             </Link>
             <Link href="/styles">
-              <li className="font-bold text-[15px] text-gray-violet hover:text-very-dark-blue text-center">
-                Pricing
-              </li>
+              <li className="desktop-menu-item">Pricing</li>
             </Link>
             <Link href="/styles">
-              <li className="font-bold text-[15px] text-gray-violet hover:text-very-dark-blue text-center">
-                Resources
-              </li>
+              <li className="desktop-menu-item">Resources</li>
             </Link>
           </ul>
         </div>
@@ -52,12 +46,10 @@ export default function NavBar() {
           <div className="hidden lg:flex ">
             <ul className="hidden lg:flex gap-8 items-center ">
               <Link href="/styles">
-                <li className="font-bold text-[15px] text-gray-violet hover:text-very-dark-blue text-center">
-                  Login
-                </li>
+                <li className="desktop-menu-item">Login</li>
               </Link>
               <Link href="/">
-                <li className="bg-cyan rounded-full py-2 px-6 font-bold text-[15px] text-white text-center">
+                <li className="bg-cyan rounded-full py-2 px-6 text-[15px] btn hover:bg-[#9AE3E3]">
                   Sign Up
                 </li>
               </Link>
@@ -79,30 +71,22 @@ export default function NavBar() {
           <div className="bg-dark-violet rounded-lg w-full px-6 py-10">
             <ul>
               <Link href="/styles">
-                <li className="font-bold text-lg text-white text-center mb-[30px]">
-                  Features
-                </li>
+                <li className="mobile-menu-item mb-[30px]">Features</li>
               </Link>
               <Link href="/">
-                <li className="font-bold text-lg text-white text-center mb-[30px]">
-                  Pricing
-                </li>
+                <li className="mobile-menu-item mb-[30px]">Pricing</li>
               </Link>
               <Link href="/">
-                <li className="font-bold text-lg text-white text-center mb-[30px]">
-                  Resources
-                </li>
+                <li className="mobile-menu-item mb-[30px]">Resources</li>
               </Link>
             </ul>
             <div className="border-b border-b-gray-violet opacity-25 mb-[30px]"></div>
             <ul>
               <Link href="/">
-                <li className="font-bold text-lg text-white text-center mb-6">
-                  Login
-                </li>
+                <li className="mobile-menu-item mb-6">Login</li>
               </Link>
               <Link href="/">
-                <li className="bg-cyan rounded-full pt-3 pb-2 font-bold text-lg text-white text-center">
+                <li className="bg-cyan rounded-full pt-3 pb-2 text-lg btn hover:bg-[#9AE3E3]">
                   Sign Up
                 </li>
               </Link>
